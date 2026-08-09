@@ -2,14 +2,14 @@
 
 public class Vehicle
 {
-    public Vehicle(string plate, string model, string mark, int year, string color, Client client)
+    public Vehicle(string plate, string model, string mark, int year, string color, int clientId)
     {
         Plate = plate;
         Model = model;
         Mark = mark;
         Year = year;
         Color = color;
-        Client = client;
+        ClientId = clientId;
     }
 
     public int Id { get; set; }

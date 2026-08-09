@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Car_Repair_Shop": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:54361;http://localhost:54362"
+    }
+  }
+}

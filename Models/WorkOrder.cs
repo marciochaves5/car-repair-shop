@@ -2,12 +2,12 @@
 
 public class WorkOrder
 {
-    public WorkOrder(int number, Client client, Vehicle vehicle, Mechanic mechanic, string problemDescription, string service, DateTime entryDate)
+    public WorkOrder(int number, int clientId, int vehicleId, int mechanicId, string problemDescription, string service, DateTime entryDate)
     {
         Number = number;
-        Client = client;
-        Vehicle = vehicle;
-        Mechanic = mechanic;
+        ClientId = clientId;
+        VehicleId = vehicleId;
+        MechanicId = mechanicId;
         ProblemDescription = problemDescription;
         Service = service;
         EntryDate = entryDate;
