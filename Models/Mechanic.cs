@@ -1,4 +1,6 @@
-﻿namespace Car_Repair_Shop.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Car_Repair_Shop.Models;
 
 public class Mechanic
 {
@@ -8,10 +10,10 @@ public class Mechanic
         Specialty = specialty;
         Contact = contact;
     }
-
+    
     public int Id { get; set; }
-    public string Name { get; set; }
-    public string Specialty { get; set; }
-    public string Contact { get; set; }
+    public required string Name { get; set; }
+    public required string Specialty { get; set; }
+    public required string Contact { get; set; }
     public ICollection<WorkOrder> WorkOrders { get; set; } = new HashSet<WorkOrder>();
 }

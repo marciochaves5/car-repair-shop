@@ -1,4 +1,6 @@
-﻿namespace Car_Repair_Shop.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Car_Repair_Shop.Models;
 
 public class Vehicle
 {
@@ -13,12 +15,12 @@ public class Vehicle
     }
 
     public int Id { get; set; }
-    public string Plate { get; set; }
-    public string Model { get; set; }
-    public string Mark { get; set; }
+    public required string Plate { get; set; }
+    public required string Model { get; set; }
+    public required string Mark { get; set; }
     public int Year { get; set; }
-    public string Color { get; set; }
+    public required string Color { get; set; }
     public int ClientId { get; set; }
-    public Client Client { get; set; }
+    public required Client Client { get; set; }
     public ICollection<WorkOrder> WorkOrders { get; set; } = new HashSet<WorkOrder>();
 }
