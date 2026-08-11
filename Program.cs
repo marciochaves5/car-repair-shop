@@ -34,6 +34,7 @@ builder.Services.AddCors(options =>
     });
 });
 
+builder.Services.AddAutoMapper(typeof(Program));
 
 var app = builder.Build();
 
