@@ -36,11 +36,12 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddAutoMapper(typeof(Program));
 
+builder.Services.AddAuthentication();
+
 var app = builder.Build();
 
 app.UseHttpsRedirection();
 app.UseCors("AllowReactApp");
-app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 
