@@ -14,10 +14,10 @@ public class ClientController : ControllerBase
     private readonly AppDbContext _appDbContext;
     private readonly IMapper _mapper;
 
-    public ClientController(AppDbContext context, IMapper mapper)
+    public ClientController(AppDbContext context, IMapper appDbContext)
     {
         _appDbContext = context;
-        _mapper = mapper;
+        _mapper = appDbContext;
     }
 
     [HttpPost]
