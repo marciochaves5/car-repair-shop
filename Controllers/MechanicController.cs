@@ -34,7 +34,7 @@ public class MechanicController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetAllMechanics([FromQuery] int skip = 0, [FromQuery] int take = 20)
     {
-        var mechanics = _appDbContext.Mechanics
+        var mechanics = await _appDbContext.Mechanics
             .Skip(skip)
             .Take(take)
             .ToListAsync();
