@@ -1,5 +1,6 @@
 ﻿using Car_Repair_Shop.Data;
 using Car_Repair_Shop.Models;
+using Car_Repair_Shop.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -62,6 +63,7 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+builder.Services.AddScoped<TokenService>();
 
 var app = builder.Build();
 
