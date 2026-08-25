@@ -16,7 +16,7 @@ public class TokenService
         _configuration = configuration;
     }
 
-    public string GenerateToker(ApplicationUser user)
+    public string GenerateToken(ApplicationUser user)
     {
         var jwtKey = _configuration["Jwt:Key"]!;
         var jwtIssuer = _configuration["Jwt:Issuer"];
@@ -40,6 +40,6 @@ public class TokenService
             expires: DateTime.UtcNow.AddMinutes(expiresInMinutes),
             signingCredentials: credentials);
 
-        return new JwtSecurityTokenHandler().WriteToken(token)
+        return new JwtSecurityTokenHandler().WriteToken(token);
     }
 }
