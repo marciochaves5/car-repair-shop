@@ -40,7 +40,7 @@ public class AuthController : ControllerBase
 
         await _userManager.AddToRoleAsync(user, "Admin");
 
-        var token = _tokenService.GenerateToken(user);
+        var token = await _tokenService.GenerateTokenAsync(user);
         return Ok(new AuthResponseDto { Token = token, Email = user.Email });
     }
 
@@ -53,7 +53,7 @@ public class AuthController : ControllerBase
         var passwordValid = await _userManager.CheckPasswordAsync(user, dto.Password);
         if (!passwordValid) return Unauthorized("Email ou senha inválidos.");
 
-        var token = _tokenService.GenerateToken(user);
+        var token = await _tokenService.GenerateTokenAsync(user);
         return Ok(new AuthResponseDto { Token = token, Email = user.Email! });
     }
 }
